@@ -18,6 +18,10 @@ function highlight(input, highlights, symbols, callback){
       pc++;
     }
 
+    if(input[pc] == '\n'){
+      pc++;
+    }
+
     output += '</span>';
   }
 
@@ -26,7 +30,7 @@ function highlight(input, highlights, symbols, callback){
     pc+=2;
     while(pc < input.length && !(input[pc] == '*' && (pc+1 < input.length && input[pc+1] == "/"))){
       if(input[pc] == "\n"){
-        output+='</span>\n<span class="comment">';
+        output+='</span><span class="comment">';
         pc++;
       } else{
         output += input[pc];
