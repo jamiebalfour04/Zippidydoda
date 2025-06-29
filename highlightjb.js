@@ -22,7 +22,7 @@ function highlight(input, highlights, symbols, callback){
       pc++;
     }
 
-    output += '</span>';
+    output += '</span>\n';
   }
 
   function generateMultilineComment(){
